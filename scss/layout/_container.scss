@@ -1,0 +1,46 @@
+.container {
+  @include center;
+  padding: 0 $spacing-unit;
+}
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+.about-container {
+  @include display-small;
+  margin: 2rem;
+
+  @media #{$brk-wide-screen} {
+    @include display;
+     margin: 4rem;
+ }
+}
+
+.service-container {
+  @include display-small;
+  gap: 1rem;
+
+  @media #{$brk-wide-screen} {
+    @include display;
+ }
+}
+
+.contact-grid {
+  @include display-small;
+  gap: 2rem;
+  margin-top: 2rem;
+
+  @media #{$brk-wide-screen} {
+    @include display;
+ }
+}
+
+.contact-image-container {
+  border-radius: $border-radius;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

@@ -1,0 +1,32 @@
+.hero {
+  background-color: $bg-light;
+  padding: 5rem 0;
+  .hero-content {
+    @include display-small;
+    margin: 0 auto;
+    gap: 2rem;
+    /* Removed max-width restriction to allow full grid width, controlled by container class */
+    @media #{$brk-wide-screen} {
+        @include display;
+    }
+    .hero-image {
+      @include size($width: 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+.hero-text {
+  text-align: center; /* Centered on mobile */
+
+  @media #{$brk-wide-screen} {
+    @include display-small;
+    text-align: left; /* Left align on desktop */
+    padding-right: 2rem;
+}
+}
+
+.hero h1 span {
+  @include text($accent-color);
+}

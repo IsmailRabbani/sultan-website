@@ -1,0 +1,18 @@
+img {
+  @include size($width: 100%, $m-width: 1400px);
+  display: block;
+  border-radius: $border-radius;
+}
+
+
+.about-image {
+  border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .about-text {
+    @include display-small;
+    justify-content: center;
+    text-align: center;
+  }
+}

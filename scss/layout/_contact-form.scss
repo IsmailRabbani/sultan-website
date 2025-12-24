@@ -1,0 +1,40 @@
+.contact-form {
+  @include size($width: 100%);
+  background: $bg-light;
+  padding: 2rem;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  @include text($size: null, $weight: 600, $color: $color-primary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  @include size($width: 100%);
+  @include text(1rem);
+  padding: 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: $border-radius;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: $accent-color;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.contact-details p {
+  @include text(1.1rem, $color: #cbd5e1);
+  margin-bottom: 0.5rem;
+}

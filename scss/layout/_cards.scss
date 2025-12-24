@@ -1,0 +1,27 @@
+.service-card {
+  background: $white;
+  padding: 2rem;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.review-card {
+  background-color: $bg-light;
+  padding: 2rem;
+  border-radius: $border-radius;
+  border-left: 4px solid $accent-color;
+}
+
+.client-name {
+  @include text($size: null, $weight: 700, $color: $color-primary);
+  margin-top: 1rem;
+  display: block;
+}
+
+.client-role {
+  @include text(0.9rem, $color: $text-light);
+}

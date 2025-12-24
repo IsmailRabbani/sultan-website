@@ -1,0 +1,42 @@
+// ==== DESCRIPTIVE COLOR VARIALBLES
+$white             : #ffffff;
+$dark-gray         : #2E2E2E;
+$cool-gray         : #64748b;
+$slate-800         : #1e293b;
+$ghost-white       : #f8fafc;
+$teal-blue         : #278da4;
+$gray-strong-blue  : #334155;
+
+// ==== FUNCTIONAL COLOR VARIABLES
+
+$color-primary     : $dark-gray;
+$color-secondary   : $gray-strong-blue;
+$accent-color      : $teal-blue;
+$bg-light          : $ghost-white;
+$text-dark         : $slate-800;
+$text-light        : $cool-gray;
+
+
+// ==== FONT STACKS
+
+$stack-sans-serif  : 'Raleway', sans-serif;
+$stack-bree-serif  : 'Bree Serif', serif;
+
+// ==== FONTS COLOR VARIABLES
+
+$font-primary      : $stack-sans-serif;
+$font-secondary    : $stack-bree-serif;
+
+//==== Spacing Units & Boarder-radius
+
+$spacing-unit: 1rem;
+$border-radius: 8PX;
+
+//==== ASSET PATH
+
+$path-img          : '../img';
+$path-font         : '../fonts';
+
+//==== MEDIA QUERY BREAKPOINTS
+
+$brk-wide-screen   : '(min-width: 768px)';
