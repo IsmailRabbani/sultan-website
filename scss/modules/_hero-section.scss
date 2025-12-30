@@ -2,18 +2,17 @@
   background-color: $bg-light;
   padding: 5rem 0;
   .hero-content {
-    @include display-small;
+    @include flexy($dir: column);
     margin: 0 auto;
     gap: 2rem;
     /* Removed max-width restriction to allow full grid width, controlled by container class */
     @media #{$brk-wide-screen} {
-        @include display;
+      @include flexy($dir: row);
+      gap: 2em;
     }
     .hero-image {
       @include size($width: 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flexy($just: center, $algn-itms: center);
     }
   }
 }
@@ -21,7 +20,7 @@
   text-align: center; /* Centered on mobile */
 
   @media #{$brk-wide-screen} {
-    @include display-small;
+    @include flexy($dir: column);
     text-align: left; /* Left align on desktop */
     padding-right: 2rem;
 }

@@ -8,39 +8,43 @@
 }
 
 .about-container {
-  @include display-small;
+  @include flexy($dir: column);
   margin: 2rem;
 
   @media #{$brk-wide-screen} {
-    @include display;
-     margin: 4rem;
+    @include flexy($dir: row);
+    gap: 2em;
+    margin: 4rem;
  }
 }
 
 .service-container {
-  @include display-small;
+  @include flexy($dir: column);;
   gap: 1rem;
 
   @media #{$brk-wide-screen} {
-    @include display;
+    @include flexy($dir: row);
+    gap: 2em;
+ }
+}
+
+.reviews-container {
+  @include flexy($dir: column);
+  gap: 1rem;
+
+  @media #{$brk-wide-screen} {
+    @include flexy($dir: row);
+    gap: 2em;
  }
 }
 
 .contact-grid {
-  @include display-small;
+  @include flexy($dir: column);;
   gap: 2rem;
   margin-top: 2rem;
 
   @media #{$brk-wide-screen} {
-    @include display;
+    @include flexy($dir: row);
+    gap: 2em;
  }
-}
-
-.contact-image-container {
-  border-radius: $border-radius;
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
 }

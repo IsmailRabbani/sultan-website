@@ -20,13 +20,12 @@
   margin-right: auto;
 }
 
-@mixin display {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-}
 
-@mixin display-small {
-  display: flex;
-  flex-direction: column;
+  // flex Conatiner
+@mixin flexy ($disp: flex, $dir: null, $wrap: null, $just: null, $algn-itms: null) {
+  display: $disp;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $just;
+  align-items: $algn-itms;
 }

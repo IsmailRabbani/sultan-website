@@ -1,0 +1,165 @@
+// 1. Keyframes must be at the root level
+@keyframes icon-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.7; stroke-width: 3px; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes icon-draw {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes icon-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes icon-check-draw {
+  from {
+    stroke-dashoffset: 30; // Hides the line
+  }
+  to {
+    stroke-dashoffset: 0; // Draws the line
+  }
+}
+
+@keyframes icon-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+// 2. Wrap everything inside the service-card
+.service-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  .icon-box {
+    @include size(50px, 50px); // Ensure this mixin exists in your project
+    margin-bottom: $spacing-unit;
+
+    svg {
+      @include size(100%, 100%);
+      stroke: $accent-color-light;
+      transition: transform 0.3s ease;
+      overflow: visible;
+
+      // Ensure parts animate from their own center
+      circle, path, rect, line {
+        transform-origin: center;
+        transform-box: fill-box;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    // Initial state for the drawing animation
+    .screen {
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+    }
+  }
+
+  // 3. Hover Logic (Correctly nested inside .service-card)
+  &:hover {
+    transform: translateY(-5px);
+
+    .icon-box svg {
+      transform: scale(1.1);
+    }
+
+    // Lead Gen (Target)
+    .icon-target {
+      .inner-dot { animation: icon-pulse 1.5s infinite; }
+      .mid-ring { animation: icon-pulse 1.5s infinite 0.2s; }
+      .outer-ring { animation: icon-pulse 1.5s infinite 0.4s; }
+    }
+
+    // BD Strategy (Monitor)
+    .icon-monitor {
+      .screen {
+        animation: icon-draw 1.5s forwards;
+      }
+      .stand-neck { transform: scaleY(1.2); }
+      .stand-foot { transform: translateY(1px); }
+    }
+
+    // Client Retention (Users)
+    .icon-users {
+      .user-main-head { animation: icon-bob 2s infinite ease-in-out; }
+      .user-side {
+        transform: translateX(-2px);
+        stroke: $accent-color-light;
+      }
+      .user-side-head { transform: translateX(-1px) translateY(1px); }
+    }
+  }
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin-top: $spacing-unit;
+
+  li {
+    @include flexy($algn-itms: center);
+    margin-bottom: $spacing-unit;
+    font-family: $font-primary;
+    color: $text-dark;
+    transition: transform 0.3s ease;
+    cursor: default;
+
+    .check-icon {
+      width: 20px; // Standardizing size
+      height: 20px;
+      margin-right: 12px;
+      stroke: $accent-color-light;
+      stroke-width: 3; // Making it slightly thicker for impact
+      flex-shrink: 0;
+      overflow: visible;
+
+      polyline {
+        // Prepare the line for the drawing animation
+        stroke-dasharray: 30;
+        stroke-dashoffset: 0; // Visible by default
+        transition: stroke-dashoffset 1s ease;
+      }
+    }
+
+    // --- ANIMATION ON HOVER ---
+    &:hover {
+      transform: translateX(5px); // Subtle nudge to the right
+      color: $accent-color;
+
+      .check-icon {
+        animation: icon-pop 1s ease-in-out;
+
+        polyline {
+          // Triggers the drawing effect
+          animation: icon-check-draw 1s ease-out forwards;
+        }
+      }
+    }
+  }
+}
+
+// 4. Fixed Social Links (Removed the double .social-links selector)
+.social-links {
+  @include flexy($just: center);
+  gap: 1.5rem;
+  margin-top: $spacing-unit;
+
+  a {
+    @include flexy($just: center, $algn-itms: center);
+    transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 50%;
+
+    &:hover {
+      color: $accent-color;
+      background: $white;
+      animation: pulse 1.3s infinite;
+    }
+  }
+}

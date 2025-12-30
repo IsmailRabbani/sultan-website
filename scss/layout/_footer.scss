@@ -5,31 +5,26 @@ footer {
 }
 
 .footer-container {
-  @include display-small;
-  gap: 2rem;
-  align-items: center;
+  @include flexy($dir: column);
   text-align: center;
+  gap: 2rem;
 
   @media #{$brk-wide-screen} {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    @include flexy($dir: row, $just: space-between, $algn-itms: flex-start);
     text-align: left;
  }
 }
 
 .footer-bottom {
-  @include display-small;
+  @include flexy($dir: column, $algn-itms: center);
   margin-top: 3rem;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   color: #64748b;
   gap: 1rem;
-  align-items: center;
 
   @media #{$brk-wide-screen} {
-    flex-direction: row;
-    justify-content: space-between;
+    @include flexy($dir: row, $just: space-between);
   }
 }

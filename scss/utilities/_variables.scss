@@ -9,12 +9,14 @@ $gray-strong-blue  : #334155;
 
 // ==== FUNCTIONAL COLOR VARIABLES
 
-$color-primary     : $dark-gray;
-$color-secondary   : $gray-strong-blue;
-$accent-color      : $teal-blue;
-$bg-light          : $ghost-white;
-$text-dark         : $slate-800;
-$text-light        : $cool-gray;
+$color-primary         : $dark-gray;
+$color-primary-light   : lighten($color-primary, 10%);
+$color-secondary       : $gray-strong-blue;
+$accent-color          : $teal-blue;
+$accent-color-light   : lighten($accent-color, 10%);
+$bg-light              : $ghost-white;
+$text-dark             : $slate-800;
+$text-light            : $cool-gray;
 
 
 // ==== FONT STACKS

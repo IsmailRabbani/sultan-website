@@ -6,13 +6,10 @@ img {
 
 
 .about-image {
+  @include flexy($just: center, $algn-itms: center);
   border-radius: $border-radius;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
   .about-text {
-    @include display-small;
-    justify-content: center;
+    @include flexy ($dir: column, $just: center);
     text-align: center;
-  }
 }
